@@ -242,8 +242,7 @@ public class msCalc extends javax.swing.JFrame {
     private void calcBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calcBtnActionPerformed
         // TODO add your handling code here:
          try {
-             boolean flagError = false;
-             
+    
             double ms1 = Double.parseDouble(ms1Fld.getText());
             double ms2 = Double.parseDouble(ms2Fld.getText());
             double ta = Double.parseDouble(taFld.getText());
@@ -253,11 +252,9 @@ public class msCalc extends javax.swing.JFrame {
             String avgStr = String.format("%.2f%%", avg);
             avFld.setText(avgStr);
             
-           if (ms1 > 25 || ms1 < 0) 
-           if (ms2 > 40 || ms2 < 0)
-           if (ta > 35 || ta < 0) {
-               avFld.setText("");
-               JOptionPane.showMessageDialog(null, "incorrect value");
+           if (ms1 > 25 || ms1 < 0 || ms2 > 40 || ms2 < 0 || ta > 35 || ta < 0) {
+            avFld.setText("");
+               JOptionPane.showMessageDialog(null, "Check the values!");
                 clrBtnActionPerformed(evt);
                          
            }         
